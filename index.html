@@ -19,199 +19,56 @@
   </header>
 
   <!-- TIMELINE -->
-  <section id="timeline" class="timeline">
-    <div class="timeline-head">
-      <h2>Major Milestones</h2>
-      <p>Scroll horizontally on desktop • Tap cards on mobile to reveal details</p>
+ <section id="timeline" class="timeline">
+  <div class="timeline-head">
+    <h2>Major Milestones</h2>
+    <p>Use arrows or let it play automatically</p>
+  </div>
+
+  <div class="carousel">
+    <button class="nav prev" aria-label="Previous milestone">&#10094;</button>
+
+    <div class="carousel-window">
+      <div class="carousel-track">
+        <!-- CARD -->
+        <article class="card">
+          <img src="assets/1968.jpg" alt="Intel founding" />
+          <div class="card-body">
+            <span class="year">1968</span>
+            <h3>Intel Founded</h3>
+            <p class="summary">Robert Noyce and Gordon Moore establish Intel.</p>
+            <p class="details">The company begins in Silicon Valley and reshapes the semiconductor industry.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/1971.jpg" alt="Intel 4004" />
+          <div class="card-body">
+            <span class="year">1971</span>
+            <h3>4004 Microprocessor</h3>
+            <p class="summary">The first commercial microprocessor.</p>
+            <p class="details">A major leap that helped define modern computing.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="assets/1978.jpg" alt="8086 processor" />
+          <div class="card-body">
+            <span class="year">1978</span>
+            <h3>x86 Architecture</h3>
+            <p class="summary">The 8086 launches the x86 era.</p>
+            <p class="details">This architecture becomes the backbone of PCs and servers.</p>
+          </div>
+        </article>
+
+        <!-- add the rest of your cards here (same structure) -->
+      </div>
     </div>
 
-    <div class="timeline-track" aria-label="Intel company timeline">
-      <!-- Tip: swap images for real stock/AI images later -->
-      <article class="card">
-        <img src="assets/1968.jpg" alt="Founding era tech" />
-        <div class="card-body">
-          <span class="year">1968</span>
-          <h3>Intel Founded</h3>
-          <p class="summary">Robert Noyce and Gordon Moore found Intel.</p>
-          <p class="details">Intel begins in Silicon Valley and grows from memory into processors and platforms.</p>
-        </div>
-      </article>
+    <button class="nav next" aria-label="Next milestone">&#10095;</button>
+  </div>
+</section>
 
-      <article class="card">
-        <img src="assets/1970.jpg" alt="Early memory chips" />
-        <div class="card-body">
-          <span class="year">1970</span>
-          <h3>1103 DRAM Breakthrough</h3>
-          <p class="summary">A pivotal memory product helps put Intel on the map.</p>
-          <p class="details">Intel’s early success came from memory technology before CPUs became the center of the business.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1971.jpg" alt="Microprocessor concept" />
-        <div class="card-body">
-          <span class="year">1971</span>
-          <h3>4004 Microprocessor</h3>
-          <p class="summary">Intel introduces the 4004, a landmark microprocessor.</p>
-          <p class="details">Often credited as a key step toward the modern digital age by putting computing on a chip.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1971-ipo.jpg" alt="Stock market chart" />
-        <div class="card-body">
-          <span class="year">1971</span>
-          <h3>Intel IPO</h3>
-          <p class="summary">Intel goes public.</p>
-          <p class="details">Becoming publicly traded helps fund growth during the early semiconductor boom.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1974.jpg" alt="Vintage computer board" />
-        <div class="card-body">
-          <span class="year">1974</span>
-          <h3>8080 Processor</h3>
-          <p class="summary">A major early CPU used in many early systems.</p>
-          <p class="details">The 8080 is widely recognized as a foundational chip in early microcomputer history.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1978.jpg" alt="CPU closeup" />
-        <div class="card-body">
-          <span class="year">1978</span>
-          <h3>8086: x86 Begins</h3>
-          <p class="summary">Intel introduces the 8086, launching the x86 era.</p>
-          <p class="details">x86 architecture becomes the long-running foundation for many PCs and servers.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1981.jpg" alt="Vintage IBM PC" />
-        <div class="card-body">
-          <span class="year">1981</span>
-          <h3>IBM PC Uses Intel</h3>
-          <p class="summary">The IBM PC era accelerates the Intel CPU standard.</p>
-          <p class="details">Major platform adoption helps x86 become a dominant computing standard.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1985.jpg" alt="Silicon wafer" />
-        <div class="card-body">
-          <span class="year">1985</span>
-          <h3>386 Processor</h3>
-          <p class="summary">A key step forward in PC performance and capability.</p>
-          <p class="details">The 386 generation becomes an important chapter in Intel’s rise in PC computing.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1989.jpg" alt="Computer lab scene" />
-        <div class="card-body">
-          <span class="year">1989</span>
-          <h3>486 Processor</h3>
-          <p class="summary">Intel advances CPU performance through the late 80s/early 90s.</p>
-          <p class="details">The 486 era is part of the momentum that leads into the Pentium brand years.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1991.jpg" alt="Inside Intel branding" />
-        <div class="card-body">
-          <span class="year">1991</span>
-          <h3>“Intel Inside” Campaign</h3>
-          <p class="summary">Intel branding becomes consumer-facing.</p>
-          <p class="details">A major marketing move that tied Intel CPUs to the identity of the PC.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1993.jpg" alt="Pentium era computer" />
-        <div class="card-body">
-          <span class="year">1993</span>
-          <h3>Pentium Launch</h3>
-          <p class="summary">Pentium becomes one of the best-known CPU brands ever.</p>
-          <p class="details">The brand era helps define 90s PC growth and Intel dominance.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/1999.jpg" alt="Laptop mobility" />
-        <div class="card-body">
-          <span class="year">1999</span>
-          <h3>Wi-Fi Adoption & Mobility</h3>
-          <p class="summary">Intel pushes into mobile computing trends.</p>
-          <p class="details">This era sets the stage for laptop-centered computing growth in the 2000s.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/2006.jpg" alt="Modern laptop" />
-        <div class="card-body">
-          <span class="year">2006</span>
-          <h3>Intel Core Era</h3>
-          <p class="summary">Core branding becomes central to consumer CPUs.</p>
-          <p class="details">Core processors become a long-running platform for laptops and desktops.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/2011.jpg" alt="Datacenter racks" />
-        <div class="card-body">
-          <span class="year">2011</span>
-          <h3>Data Center Momentum</h3>
-          <p class="summary">Server and data center chips grow in importance.</p>
-          <p class="details">Intel’s server strategy becomes a major pillar of the business for years.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/2012.jpg" alt="Transistor illustration" />
-        <div class="card-body">
-          <span class="year">2012</span>
-          <h3>3D Tri-Gate Transistors</h3>
-          <p class="summary">Intel highlights a major transistor architecture shift in manufacturing.</p>
-          <p class="details">Intel’s chip-history materials point to Tri-Gate as a signature manufacturing innovation.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/2021.jpg" alt="Factory exterior" />
-        <div class="card-body">
-          <span class="year">2021</span>
-          <h3>IDM 2.0 + Foundry Push</h3>
-          <p class="summary">Intel announces IDM 2.0 and Intel Foundry Services plans.</p>
-          <p class="details">Includes major manufacturing expansion plans and a push to serve external foundry customers.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/2022.jpg" alt="GPU render" />
-        <div class="card-body">
-          <span class="year">2022</span>
-          <h3>Intel Arc Launch</h3>
-          <p class="summary">Intel launches Arc discrete graphics for laptops.</p>
-          <p class="details">Arc marks Intel’s push into discrete GPU products beyond integrated graphics.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <img src="assets/2025.jpg" alt="Business headlines" />
-        <div class="card-body">
-          <span class="year">2025</span>
-          <h3>Industry Pressure & Turnaround Focus</h3>
-          <p class="summary">Intel’s challenges and strategy shifts remain a major storyline.</p>
-          <p class="details">Major coverage highlights competition, manufacturing execution, and the AI era as key pressures.</p>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>Swap in milestone-specific images to grab the extra-credit “Custom Images” points.</p>
-  </footer>
 
   <script>
     // Tap-to-toggle details (helps on mobile where hover doesn't exist)
