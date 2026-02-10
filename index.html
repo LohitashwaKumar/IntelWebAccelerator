@@ -1,50 +1,74 @@
-<header class="hero">
-  <div class="hero__overlay"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intel Timeline</title>
 
-  <div class="hero__content">
-    <img class="hero__logo" src="assets/intel-logo.png" alt="Intel logo" />
+  <!-- MUST match your file name exactly -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
 
-    <h1 class="hero__title">Intel Through the Years</h1>
-    <p class="hero__subtitle">
-      A quick, visual timeline of key milestones in Intel’s evolution.
-    </p>
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <img src="assets/intel-logo.png" alt="Intel logo" class="logo" />
 
-    <a class="hero__cta" href="#timeline">Explore the Timeline</a>
-  </div>
-</header>
+      <h1>Intel Through the Years</h1>
+      <p class="subtitle">
+        A visual timeline highlighting Intel’s most important innovations.
+      </p>
 
-<section id="timeline" class="timeline">
-  <div class="timeline__header">
+      <a href="#timeline" class="btn">Explore Timeline</a>
+    </div>
+  </header>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="timeline">
     <h2>Milestones</h2>
-    <p>Scroll on desktop • Stack on mobile</p>
-  </div>
 
-  <div class="timeline__scroller" aria-label="Intel timeline">
-    <!-- Repeat .milestone cards -->
-    <article class="milestone">
-      <img src="assets/m1.jpg" alt="Milestone image" class="milestone__img">
-      <div class="milestone__body">
-        <div class="milestone__meta">
-          <span class="milestone__year">1968</span>
-          <span class="milestone__tag">Founding</span>
+    <div class="timeline-track">
+      <!-- CARD 1 -->
+      <article class="card">
+        <img src="assets/m1.jpg" alt="Intel founding" />
+        <div class="card-body">
+          <span class="year">1968</span>
+          <h3>Intel Founded</h3>
+          <p class="summary">Gordon Moore and Robert Noyce start Intel.</p>
+          <p class="details">
+            Intel begins as a memory company, laying the foundation for modern computing.
+          </p>
         </div>
-        <h3 class="milestone__title">Intel is Founded</h3>
+      </article>
 
-        <p class="milestone__short">A new era of semiconductor innovation begins.</p>
-
-        <div class="milestone__more">
-          <p>Extra details show on hover/focus. Keep it 1–3 lines so it feels snappy.</p>
+      <!-- CARD 2 -->
+      <article class="card">
+        <img src="assets/m2.jpg" alt="Intel microprocessor" />
+        <div class="card-body">
+          <span class="year">1971</span>
+          <h3>First Microprocessor</h3>
+          <p class="summary">The Intel 4004 changes computing forever.</p>
+          <p class="details">
+            The world’s first commercial microprocessor puts computing power on a single chip.
+          </p>
         </div>
-      </div>
-    </article>
-<script>
-  document.querySelectorAll('.milestone').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('is-open');
-    });
-  });
-</script>
+      </article>
 
-    <!-- add more cards... -->
-  </div>
-</section>
+      <!-- CARD 3 -->
+      <article class="card">
+        <img src="assets/m3.jpg" alt="Intel processors" />
+        <div class="card-body">
+          <span class="year">1993</span>
+          <h3>Pentium Era</h3>
+          <p class="summary">Intel becomes a household name.</p>
+          <p class="details">
+            The Pentium brand establishes Intel as the dominant processor company.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+</body>
+</html>
