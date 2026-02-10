@@ -1,213 +1,148 @@
-:root{
-  --intel-blue: #0071c5;
-  --intel-blue-dark: #004a86;
-  --bg: #07121f;
-  --card: rgba(255,255,255,.08);
-  --card-border: rgba(255,255,255,.18);
-  --text: #eef6ff;
-  --muted: rgba(238,246,255,.75);
-  --shadow: 0 18px 40px rgba(0,0,0,.35);
-  --radius: 18px;
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hero{
-  position: relative;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #050b14;
+  color: #f2f6fb;
+}
+
+/* HERO */
+.hero {
   min-height: 70vh;
-  display: grid;
-  place-items: center;
-  padding: 72px 20px;
-  background:
-    radial-gradient(1200px 600px at 10% 10%, rgba(0,113,197,.45), transparent 60%),
-    radial-gradient(900px 500px at 90% 20%, rgba(0,74,134,.55), transparent 55%),
-    linear-gradient(135deg, #061223 0%, #040a12 60%, #061223 100%);
-  color: var(--text);
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, #0071c5, #003b6f);
 }
 
-.hero__overlay{
-  position:absolute; inset:0;
-  background:
-    linear-gradient(to bottom, rgba(0,0,0,.25), rgba(0,0,0,.55));
-  pointer-events:none;
-}
-
-.hero__content{
-  position: relative;
-  max-width: 980px;
-  width: 100%;
+.hero-content {
+  max-width: 800px;
   text-align: left;
-  display: grid;
-  gap: 16px;
 }
 
-.hero__logo{
+.logo {
   width: 120px;
-  height: auto;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+  margin-bottom: 1rem;
 }
 
-.hero__title{
-  font-size: clamp(2.2rem, 4.2vw, 4rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  margin: 0;
+.hero h1 {
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1.1;
 }
 
-.hero__subtitle{
-  margin: 0;
-  max-width: 52ch;
-  color: var(--muted);
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
+.subtitle {
+  margin: 1rem 0 2rem;
+  font-size: 1.1rem;
+  color: #d9e9f7;
 }
 
-.hero__cta{
-  width: fit-content;
-  margin-top: 10px;
-  background: var(--intel-blue);
-  color: white;
-  text-decoration: none;
-  padding: 12px 16px;
+.btn {
+  display: inline-block;
+  background: white;
+  color: #0071c5;
+  padding: 0.75rem 1.5rem;
   border-radius: 999px;
   font-weight: 600;
-  box-shadow: 0 14px 30px rgba(0,113,197,.25);
-  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
-}
-.hero__cta:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 18px 36px rgba(0,113,197,.35);
-  background: #0a7fd6;
+  text-decoration: none;
+  transition: transform 0.2s ease;
 }
 
-.timeline{
-  padding: 48px 20px 64px;
-  background: var(--bg);
-  color: var(--text);
+.btn:hover {
+  transform: translateY(-3px);
 }
 
-.timeline__header{
-  max-width: 980px;
-  margin: 0 auto 18px;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
+/* TIMELINE */
+.timeline {
+  padding: 4rem 1.5rem;
 }
-.timeline__header h2{ margin: 0; font-size: 1.6rem; }
-.timeline__header p{ margin: 0; color: var(--muted); }
 
-.timeline__scroller{
-  max-width: 1100px;
+.timeline h2 {
+  max-width: 1000px;
+  margin: 0 auto 1rem;
+  font-size: 1.75rem;
+}
+
+/* HORIZONTAL SCROLL */
+.timeline-track {
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
-  gap: 18px;
-  padding: 10px 6px 18px;
+  gap: 1.5rem;
   overflow-x: auto;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
+  padding-bottom: 1rem;
 
-  /* Extra credit: scroll snap */
+  /* EXTRA CREDIT: scroll snap */
   scroll-snap-type: x mandatory;
 }
 
-.milestone{
-  flex: 0 0 320px;
-  background: var(--card);
-  border: 1px solid var(--card-border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+/* CARD */
+.card {
+  min-width: 300px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 16px;
   overflow: hidden;
-
-  /* Extra credit: transforms / transitions */
-  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
   scroll-snap-align: start;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.milestone:hover{
-  transform: translateY(-6px) scale(1.01);
-  border-color: rgba(0,113,197,.55);
-  box-shadow: 0 26px 60px rgba(0,0,0,.45);
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
-.milestone__img{
+.card img {
   width: 100%;
-  height: 170px;
+  height: 180px;
   object-fit: cover;
-  display: block;
-  filter: saturate(1.05) contrast(1.05);
 }
 
-.milestone__body{
-  padding: 14px 14px 16px;
-  display: grid;
-  gap: 10px;
+.card-body {
+  padding: 1rem;
 }
 
-.milestone__meta{
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.milestone__year{
-  font-weight: 700;
-  color: white;
-}
-.milestone__tag{
-  font-size: .8rem;
-  color: rgba(255,255,255,.85);
-  background: rgba(0,113,197,.25);
-  border: 1px solid rgba(0,113,197,.35);
-  padding: 4px 10px;
-  border-radius: 999px;
+.year {
+  color: #7cc4ff;
+  font-weight: bold;
 }
 
-.milestone__title{
-  margin: 0;
-  font-size: 1.1rem;
-  letter-spacing: -0.01em;
+.card h3 {
+  margin: 0.5rem 0;
 }
 
-.milestone__short{
-  margin: 0;
-  color: var(--muted);
+.summary {
+  color: #cfe6fb;
 }
 
-/* Hover reveal details */
-.milestone__more{
-  max-height: 0;
+.details {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
   opacity: 0;
+  max-height: 0;
   overflow: hidden;
-  transition: max-height .25s ease, opacity .25s ease;
-  color: rgba(238,246,255,.85);
+  transition: opacity 0.3s ease, max-height 0.3s ease;
 }
-.milestone:hover .milestone__more,
-.milestone:focus-within .milestone__more{
-  max-height: 120px;
+
+/* HOVER REVEAL */
+.card:hover .details {
   opacity: 1;
+  max-height: 100px;
 }
 
-/* Mobile: stack vertically */
-@media (max-width: 720px){
-  .timeline__header{
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .timeline__scroller{
+/* MOBILE STACK */
+@media (max-width: 768px) {
+  .timeline-track {
     flex-direction: column;
     overflow-x: hidden;
-    overflow-y: visible;
-    scroll-snap-type: none;
   }
 
-  .milestone{
-    flex: 1 1 auto;
-    width: 100%;
+  .card {
+    min-width: 100%;
   }
-
-  .milestone.is-open .milestone__more{
-  max-height: 120px;
-  opacity: 1;
 }
-
-}
-
