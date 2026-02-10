@@ -179,3 +179,59 @@ body{
   color: var(--muted);
   text-align: center;
 }
+
+/* CAROUSEL TIMELINE */
+.carousel{
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.carousel-window{
+  overflow: hidden;
+}
+
+.carousel-track{
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+/* NAV ARROWS */
+.nav{
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: white;
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav:hover{
+  background: rgba(0,113,197,0.6);
+  transform: scale(1.1);
+}
+
+/* MOBILE STACK */
+@media (max-width: 768px){
+  .carousel{
+    grid-template-columns: 1fr;
+  }
+
+  .nav{
+    display: none;
+  }
+
+  .carousel-track{
+    flex-direction: column;
+    transform: none !important;
+  }
+}
+
