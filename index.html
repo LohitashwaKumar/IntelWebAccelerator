@@ -37,6 +37,13 @@
         </div>
       </div>
     </article>
+<script>
+  document.querySelectorAll('.milestone').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('is-open');
+    });
+  });
+</script>
 
     <!-- add more cards... -->
   </div>
