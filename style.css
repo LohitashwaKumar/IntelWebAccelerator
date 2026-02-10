@@ -1,148 +1,181 @@
 /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root{
+  --intel-blue: #0071c5;
+  --intel-blue-dark: #003b6f;
+  --bg: #050b14;
+  --card: rgba(255,255,255,0.08);
+  --border: rgba(255,255,255,0.16);
+  --text: #f2f6fb;
+  --muted: rgba(242,246,251,0.75);
 }
 
-body {
+body{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #050b14;
-  color: #f2f6fb;
+  background: var(--bg);
+  color: var(--text);
 }
 
 /* HERO */
-.hero {
+.hero{
   min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1.5rem;
-  background: linear-gradient(135deg, #0071c5, #003b6f);
+  padding: 3.5rem 1.5rem;
+  background: linear-gradient(135deg, var(--intel-blue), var(--intel-blue-dark));
 }
 
-.hero-content {
-  max-width: 800px;
+.hero-content{
+  max-width: 950px;
+  width: 100%;
   text-align: left;
+  display: grid;
+  gap: 14px;
 }
 
-.logo {
-  width: 120px;
-  margin-bottom: 1rem;
-}
+.logo{ width: 120px; height: auto; }
 
-.hero h1 {
+.hero h1{
   font-size: clamp(2.5rem, 4vw, 4rem);
-  line-height: 1.1;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
-.subtitle {
-  margin: 1rem 0 2rem;
+.subtitle{
+  max-width: 60ch;
+  color: rgba(255,255,255,0.88);
   font-size: 1.1rem;
-  color: #d9e9f7;
 }
 
-.btn {
+.btn{
   display: inline-block;
+  width: fit-content;
   background: white;
-  color: #0071c5;
-  padding: 0.75rem 1.5rem;
+  color: var(--intel-blue);
+  padding: 0.8rem 1.4rem;
   border-radius: 999px;
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   transition: transform 0.2s ease;
 }
-
-.btn:hover {
-  transform: translateY(-3px);
-}
+.btn:hover{ transform: translateY(-3px); }
 
 /* TIMELINE */
-.timeline {
-  padding: 4rem 1.5rem;
+.timeline{
+  padding: 3.5rem 1.5rem 4rem;
 }
 
-.timeline h2 {
-  max-width: 1000px;
+.timeline-head{
+  max-width: 1100px;
   margin: 0 auto 1rem;
-  font-size: 1.75rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
 }
+.timeline-head h2{ font-size: 1.8rem; }
+.timeline-head p{ color: var(--muted); }
 
-/* HORIZONTAL SCROLL */
-.timeline-track {
-  max-width: 1000px;
+/* Horizontal scroll track */
+.timeline-track{
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
-  gap: 1.5rem;
+  gap: 1.25rem;
   overflow-x: auto;
-  padding-bottom: 1rem;
+  padding: 0.25rem 0.25rem 1rem;
 
-  /* EXTRA CREDIT: scroll snap */
+  /* Extra credit: scroll snap */
   scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 }
 
-/* CARD */
-.card {
-  min-width: 300px;
-  background: rgba(255,255,255,0.08);
+/* Cards */
+.card{
+  flex: 0 0 320px;
+  background: var(--card);
+  border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
   scroll-snap-align: start;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
 }
 
-.card:hover {
+.card:hover{
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border-color: rgba(0,113,197,0.55);
+  box-shadow: 0 22px 45px rgba(0,0,0,0.45);
 }
 
-.card img {
+.card img{
   width: 100%;
   height: 180px;
   object-fit: cover;
+  display: block;
 }
 
-.card-body {
+.card-body{
   padding: 1rem;
+  display: grid;
+  gap: 0.55rem;
 }
 
-.year {
+.year{
   color: #7cc4ff;
-  font-weight: bold;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
-.card h3 {
-  margin: 0.5rem 0;
+.card h3{
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
 }
 
-.summary {
-  color: #cfe6fb;
-}
+.summary{ color: rgba(242,246,251,0.85); }
 
-.details {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
+.details{
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
   line-height: 1.4;
+
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: opacity 0.3s ease, max-height 0.3s ease;
+  transition: opacity 0.25s ease, max-height 0.25s ease;
 }
 
-/* HOVER REVEAL */
-.card:hover .details {
+/* Hover reveal + tap reveal */
+.card:hover .details,
+.card.is-open .details{
   opacity: 1;
-  max-height: 100px;
+  max-height: 140px;
 }
 
-/* MOBILE STACK */
-@media (max-width: 768px) {
-  .timeline-track {
+/* MOBILE: stack vertically */
+@media (max-width: 768px){
+  .timeline-head{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-track{
     flex-direction: column;
     overflow-x: hidden;
+    scroll-snap-type: none;
   }
 
-  .card {
-    min-width: 100%;
+  .card{
+    flex: 1 1 auto;
+    width: 100%;
   }
+}
+
+/* Footer */
+.footer{
+  padding: 2rem 1.5rem 3rem;
+  color: var(--muted);
+  text-align: center;
 }
